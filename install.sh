@@ -63,6 +63,9 @@ apt-get install -q -y git=1:2.16.2*
 echo "================= Adding JQ 1.5.1 ==================="
 apt-get install -q jq=1.5*
 
+echo "================= Adding awscli 1.11.164 ============"
+sudo pip install -q 'awscli==1.11.164'
+
 echo "================= Installing Node 7.x ==================="
 . /u16/node/install.sh
 

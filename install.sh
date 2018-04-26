@@ -2,6 +2,9 @@
 
 export DEBIAN_FRONTEND=noninteractive
 
+## workaround for https://askubuntu.com/a/838291
+chmod 777 /tmp
+
 echo "================ Installing locales ======================="
 apt-get clean && apt-get update
 apt-get install -q locales=2.23*

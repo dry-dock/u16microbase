@@ -3,7 +3,7 @@
 export DEBIAN_FRONTEND=noninteractive
 
 ## workaround for https://askubuntu.com/a/838291
-chmod 777 /tmp
+chmod 0777 /tmp
 
 echo "================ Installing locales ======================="
 apt-get clean && apt-get update
@@ -98,7 +98,7 @@ AZURE_CLI_VERSION=2.0.25*
 echo "================ Adding azure-cli $AZURE_CLI_VERSION =============="
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
   sudo tee /etc/apt/sources.list.d/azure-cli.list
-sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
+curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 sudo apt-get install -q apt-transport-https=1.2*
 sudo apt-get update && sudo apt-get install -q -y azure-cli=$AZURE_CLI_VERSION
 

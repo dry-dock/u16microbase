@@ -64,7 +64,7 @@ pip install -q pyOpenSSL==17.5.0
 echo "================= Installing Git ==================="
 add-apt-repository ppa:git-core/ppa -y
 apt-get update
-apt-get install -q -y git=1:2.19*
+apt-get install -q -y git=1:2.*
 
 echo "================= Adding JQ 1.5.1 ==================="
 apt-get install -q jq=1.5*

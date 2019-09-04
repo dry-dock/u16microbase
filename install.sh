@@ -108,6 +108,12 @@ git clone https://github.com/Shippable/node.git nodeRepo
 ./nodeRepo/shipctl/x86_64/Ubuntu_16.04/install.sh
 rm -rf nodeRepo
 
+echo "================= Intalling JFrog CLI ================="
+JFROG_CLI_VERSION=1.26.1
+wget -nv https://api.bintray.com/content/jfrog/jfrog-cli-go/$JFROG_CLI_VERSION/jfrog-cli-linux-amd64/jfrog?bt_package=jfrog-cli-linux-amd64 -O jfrog
+chmod +x jfrog
+mv jfrog /usr/bin/jfrog
+
 echo "Installed Shippable CLIs successfully"
 echo "-------------------------------------"
 

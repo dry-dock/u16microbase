@@ -102,6 +102,12 @@ curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 sudo apt-get install -q apt-transport-https=1.2*
 sudo apt-get update && sudo apt-get install -q -y azure-cli=$AZURE_CLI_VERSION
 
+JFROG_VERSION=1.24.1
+echo "================= Adding jfrog-cli $JFROG_VERSION  ==============================="
+wget -nv https://api.bintray.com/content/jfrog/jfrog-cli-go/"$JFROG_VERSION"/jfrog-cli-linux-amd64/jfrog?bt_package=jfrog-cli-linux-amd64 -O jfrog
+sudo chmod +x jfrog
+mv jfrog /usr/bin/jfrog
+
 echo "================= Intalling Shippable CLIs ================="
 
 git clone https://github.com/Shippable/node.git nodeRepo
